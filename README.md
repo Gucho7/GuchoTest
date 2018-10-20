@@ -1,2 +1,0 @@
-# GuchoTest
-Created with CodeSandbox
