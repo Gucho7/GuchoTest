@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import addGuchoView from "../actions/Ui";
+import { addGuchoView } from "../actions/Ui";
 import GuchoList from "../components/GuchoList";
 
 const mapStateToProps = state => {

@@ -1,10 +1,13 @@
 const ui = (state = { redirect: "list" }, action) => {
   switch (action.type) {
     case "AddGucho":
-      state.redirect = "list";
-      return state;
+      return Object.assign({}, state, {
+        redirect: "list"
+      });
     case "AddGuchoView":
-      state.redirect = "addGucho";
+      return Object.assign({}, state, {
+        redirect: "addGucho"
+      });
     default:
       return state;
   }

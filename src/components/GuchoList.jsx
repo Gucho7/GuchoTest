@@ -17,8 +17,6 @@ class GuchoList extends React.Component {
       <div>
         {this.props.guchos.map(gucho => <div>{gucho.text}</div>)}
         <button onClick={this.onClickAddGucho}>Add Gucho</button>
-        <br />
-        {JSON.stringify(this.props.state)}
       </div>
     );
   }
