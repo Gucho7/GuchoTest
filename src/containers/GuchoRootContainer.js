@@ -3,7 +3,6 @@ import GuchoRoot from "../components/GuchoRoot";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    ...ownProps,
     redirect: state.ui.redirect
   };
 };
