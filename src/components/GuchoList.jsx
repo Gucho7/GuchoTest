@@ -15,7 +15,7 @@ class GuchoList extends React.Component {
   render() {
     return (
       <div>
-        {this.props.guchos.map(gucho => <div>{gucho.text}</div>)}
+        {this.props.guchos.map((gucho, i) => <div key={i}>{gucho.text}</div>)}
         <button onClick={this.onClickAddGucho}>Add Gucho</button>
       </div>
     );

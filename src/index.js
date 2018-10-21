@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import God from "./reducers/God";
@@ -17,7 +17,10 @@ function App() {
       <div className="App">
         <Header />
         <Router>
-          <Route path="/:view" component={() => <Root store={store} />} />
+          <div>
+            <Route path="/:view" component={() => <Root />} />
+            <Redirect from="/" to="/list" />
+          </div>
         </Router>
       </div>
     </Provider>

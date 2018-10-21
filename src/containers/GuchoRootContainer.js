@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import GuchoRoot from "../components/GuchoRoot";
 
-const mapStateToProps = state => {
-  console.log(state.ui.redirect);
+const mapStateToProps = (state, ownProps) => {
   return {
+    ...ownProps,
     redirect: state.ui.redirect
   };
 };
