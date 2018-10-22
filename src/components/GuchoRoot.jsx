@@ -1,22 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import { withRouter } from "react-router";
 import GuchoList from "../containers/GuchoListContainer";
 import AddGucho from "../containers/AddGuchoContainer";
 
 class GuchoRoot extends React.Component {
+  componentDidUpdate() {
+    if (this.props.redirect === null) return;
+
+    this.props.resetRedirect();
+  }
+
   render() {
     let redirectPath = `/${this.props.redirect}`;
     return (
       <Router>
         <div>
-          <Route path="/(list)" component={GuchoList} />
-          <Route path="/(addGucho)" component={AddGucho} />
-          <Redirect to={redirectPath} />
+          <Route path="/(list)" render={() => <GuchoList />} />
+          <Route path="/(addGucho)" render={() => <AddGucho />} />
+          {this.props.redirect !== null && <Redirect to={redirectPath} />}
         </div>
       </Router>
     );
   }
 }
 
-export default withRouter(GuchoRoot);
+export default GuchoRoot;

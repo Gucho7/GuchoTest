@@ -3,3 +3,9 @@ export const addGuchoView = () => {
     type: "AddGuchoView"
   };
 };
+
+export const resetRedirect = () => {
+  return {
+    type: "ResetView"
+  };
+};
