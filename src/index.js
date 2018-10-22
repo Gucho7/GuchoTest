@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import { withRouter } from "react-router";
 import God from "./reducers/God";
 import Header from "./components/Header";
 import Root from "./containers/GuchoRootContainer";
