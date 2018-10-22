@@ -6,6 +6,7 @@ import { createStore } from "redux";
 import God from "./reducers/God";
 import Header from "./components/Header";
 import Root from "./containers/GuchoRootContainer";
+import Grid from "@material-ui/core/Grid";
 
 import "./styles.css";
 
@@ -15,15 +16,21 @@ function App() {
   const pathName = global.location.pathname;
   return (
     <Provider store={store}>
-      <div className="App">
-        <Header />
-        <Router>
-          <div>
-            <Route path="/:view" render={() => <Root />} />
-            {pathName === "/" && <Redirect from="/" to="/list" />}
-          </div>
-        </Router>
-      </div>
+      <Grid container spacing={40}>
+        <Grid item xs={4} />
+        <Grid item xs={4}>
+          <Header />
+        </Grid>
+        <Grid item xs={4} />
+        <Grid item xs={12}>
+          <Router>
+            <div>
+              <Route exact path="/:view" render={() => <Root />} />
+              {pathName === "/" && <Redirect from="/" to="/list" />}
+            </div>
+          </Router>
+        </Grid>
+      </Grid>
     </Provider>
   );
 }

@@ -4,6 +4,12 @@ import GuchoList from "../containers/GuchoListContainer";
 import AddGucho from "../containers/AddGuchoContainer";
 
 class GuchoRoot extends React.Component {
+  componentDidMount() {
+    if (this.props.redirect === null) return;
+
+    this.props.resetRedirect();
+  }
+
   componentDidUpdate() {
     if (this.props.redirect === null) return;
 

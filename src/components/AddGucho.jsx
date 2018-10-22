@@ -1,5 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
 
 class AddGucho extends React.Component {
   constructor(props) {
@@ -14,10 +17,21 @@ class AddGucho extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="text" ref={this.input} />
-        <input onClick={this.handleClickButton} type="button" value="Add" />
-      </div>
+      <Grid container>
+        <Grid item xs={3} />
+        <Grid item xs={4}>
+          <TextField inputProps={{ ref: this.input }} fullWidth />
+        </Grid>
+        <Grid item xs={4}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.handleClickButton}
+          >
+            Add
+          </Button>
+        </Grid>
+      </Grid>
     );
   }
 }

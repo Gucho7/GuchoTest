@@ -1,4 +1,5 @@
 import React from "react";
+import Typography from "@material-ui/core/Typography";
 
 class Header extends React.Component {
   constructor(props) {
@@ -6,7 +7,11 @@ class Header extends React.Component {
   }
 
   render() {
-    return <h1>Gucho's Test</h1>;
+    return (
+      <Typography variant="display1" component="h1">
+        Gucho's Test
+      </Typography>
+    );
   }
 }
 

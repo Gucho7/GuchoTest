@@ -1,5 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import Gucho from "./Gucho";
 
 class GuchoList extends React.Component {
   constructor(props) {
@@ -14,10 +16,21 @@ class GuchoList extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.guchos.map((gucho, i) => <div key={i}>{gucho.text}</div>)}
-        <button onClick={this.onClickAddGucho}>Add Gucho</button>
-      </div>
+      <Grid container spacing={16}>
+        <Grid container xs="12" spacing={8}>
+          {this.props.guchos.map((gucho, i) => <Gucho key={i} {...gucho} />)}
+        </Grid>
+        <Grid item xs="12" />
+        <Grid item xs="12">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.onClickAddGucho}
+          >
+            Add Gucho
+          </Button>
+        </Grid>
+      </Grid>
     );
   }
 }
