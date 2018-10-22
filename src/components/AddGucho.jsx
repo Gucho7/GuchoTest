@@ -17,12 +17,12 @@ class AddGucho extends React.Component {
 
   render() {
     return (
-      <Grid container>
-        <Grid item xs={3} />
-        <Grid item xs={4}>
+      <Grid container spacing={8}>
+        <Grid item xs={4} />
+        <Grid item xs={3}>
           <TextField inputProps={{ ref: this.input }} fullWidth />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={1}>
           <Button
             variant="contained"
             color="primary"
@@ -31,6 +31,7 @@ class AddGucho extends React.Component {
             Add
           </Button>
         </Grid>
+        <Grid item xs={4} />
       </Grid>
     );
   }
