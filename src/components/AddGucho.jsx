@@ -17,8 +17,6 @@ class AddGucho extends React.Component {
       <div>
         <input type="text" ref={this.input} />
         <input onClick={this.handleClickButton} type="button" value="Add" />
-        <br />
-        {JSON.stringify(this.props.state)}
       </div>
     );
   }
