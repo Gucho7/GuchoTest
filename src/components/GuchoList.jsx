@@ -17,7 +17,7 @@ class GuchoList extends React.Component {
   render() {
     return (
       <Grid container spacing={16}>
-        <Grid container xs="12" spacing={8}>
+        <Grid item xs="12">
           {this.props.guchos.map((gucho, i) => <Gucho key={i} {...gucho} />)}
         </Grid>
         <Grid item xs="12" />
